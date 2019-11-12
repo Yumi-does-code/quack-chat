@@ -1,12 +1,15 @@
-const appIO = require('http').createServer(handler)
-const io = require('socket.io')(appIO);
-const express = require('express');
-const app = express();
 const port = process.env.PORT || 80;
+const app = require('express')();
+const appIO = require('http').createServer(app);
+const io = require('socket.io')(server);
+appIO.listen(port);
+
+
+
+
 const request = require('request');
 
 
-appIO.listen(process.env.PORT || 80);
 
 function handler (req, res) {
 
