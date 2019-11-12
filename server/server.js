@@ -1,16 +1,12 @@
-const port = process.env.PORT || 80;
-const app = require('express')();
-const express = require("express");
-const appIO = require('http').createServer(app);
+const appIO = require('http').createServer(handler)
 const io = require('socket.io')(appIO);
-appIO.listen(port);
-
-
-
-
+const express = require('express');
+const app = express();
+const port = 3000;
 const request = require('request');
 
 
+appIO.listen(80);
 
 function handler (req, res) {
 
