@@ -270,7 +270,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.use(express.static('client'))
+app.use(app.static('client'))
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
