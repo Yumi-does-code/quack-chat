@@ -1,7 +1,7 @@
 const port = process.env.PORT || 80;
 const app = require('express')();
 const appIO = require('http').createServer(app);
-const io = require('socket.io')(server);
+const io = require('socket.io')(appIO);
 appIO.listen(port);
 
 
