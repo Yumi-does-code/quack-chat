@@ -122,7 +122,7 @@ window.docLoaded = new Promise((resolve, reject) => {
 				text: val
 			}) && (f.area.innerHTML = "");
 		},
-		socket: io(`wss://chat.animedelta.net:3001`), //`ws://localhost:80/`
+		socket: io(`wss://chat.animedelta.net`), //`ws://localhost:80/`
 		input: e => {
 			const which = e.which || e.keyCode;
 			const shift = e.shiftKey || e.shift
