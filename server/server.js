@@ -6,7 +6,7 @@ const port = 3000;
 const request = require('request');
 
 
-appIO.listen(80);
+appIO.listen(process.env.PORT || 80);
 
 function handler (req, res) {
 
