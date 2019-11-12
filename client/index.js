@@ -122,7 +122,7 @@ window.docLoaded = new Promise((resolve, reject) => {
 				text: val
 			}) && (f.area.innerHTML = "");
 		},
-		socket: io(`ws://localhost:80/`),
+		socket: io(`wss://quack-chat-edge.herokuapp.com/`), //`ws://localhost:80/`
 		input: e => {
 			const which = e.which || e.keyCode;
 			const shift = e.shiftKey || e.shift
