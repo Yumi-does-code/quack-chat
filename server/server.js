@@ -1,15 +1,11 @@
-const express = require('express');
+const app = require("express")();
+var cors = require('cors');
+cors({credentials: true, origin: true});
+app.use(cors());
+const http = require("http").createServer(app);
+const io = require("socket.io")(http);
 const port = process.env.PORT || 3000;
-const request = require('request');
-
-
-var app = express()
-  , server = require('http').createServer(app)
-  , io = require('socket.io').listen(server);
-
-server.listen(port);
-
-
+const request = require("request");
 
 
 function handler (req, res) {
@@ -260,18 +256,6 @@ function getUserInfo(user_id, token) {
 
 
 
-
-
-
-
-app.get("/", (req, res) => {
-
-  res.render("../client/index.pug");
-
+http.listen(port, () => {
+  console.log(`lisetning to ${port}`);
 });
-
-
-app.use(express.static('client'))
-
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
